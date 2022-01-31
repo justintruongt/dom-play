@@ -1,6 +1,6 @@
 //alert("test");    
 
-/*<script>
+<script>
     //https://tinyurl.com/dynamic-html-checker
     document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
       
@@ -16,4 +16,4 @@
         }
     }   
  </script>
- */
+ 

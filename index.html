@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="css/nav.css" />
   <style>
 
-      /*
-      span#hamlet {
+     /* 
+      div#play span {
           background-color: yellow; 
       }
-
-      */
+*/
+      
   </style>
-  <script src="js/main.js"></script>
+ 
  </head>
  <body>
      <header>
@@ -26,10 +26,14 @@
      
    <main class="wrapper">
       
-  
-       <p><span class="hamlet">Hamlet:To be or not to be?</span> </p>
-       <p><span>Skull: Are you talking to me?</span> </p>
-     
+  <div id="play">
+       <p><span data-actor="hamlet">Hamlet: To be or not to be?</span> </p>
+       <p><span data-actor="skull">Skull: Are you talking to me?</span> </p>
+       <p><span data-actor="hamlet">Hamlet: Did you say something?</span> </p>
+       <p><span data-actor="skull">Skull: No, I'm only a skull.</span> </p>
+       <p><span data-actor="hamlet">Hamlet: Good! I thought I was going crazy!</span> </p>
+       <p><span data-actor="romeo">Romeo: What am I doing here?</span> </p>
+    </div>
      <footer>
       <p><small>&copy; 2021 by 
           Justin Truong, All Rights Reserved ~ 
@@ -42,7 +46,62 @@
 
 
 <script>
-    document.getElementById('hamlet').style.backgroundColor = "yellow";
+    const spans = document.querySelectorAll('div#play span');
+    console.log(spans);
+    
+    
+    
+    for(const mySpan of spans) {
+        mySpan.addEventListener('click', function(ev){
+            //alert(Myspan.dataset.actor);
+            highlightActor(mySpan.dataset.actor);
+        });
+    }
+    
+    function highlightActor (myActor) { //function is only for javascript, highlight actor is variable and myactor is the parameter. 
+       
+        for(const mySpan of spans) {
+            
+        if(myActor == Myspan.dataset.actor) {
+            mySpan.style.backgroundColor ='yellow';
+         }else {
+            mySpan.style.backgroundColor ='white';
+       }
+
+
+
+
+        }
+       
+       }
+
+
+
+
+    
+   /* function highlight (el) {
+       
+       if(el.style.backgroundColor == 'yellow') {
+        el.style.backgroundColor ='white';
+       }else {
+        el.style.backgroundColor ='yellow';
+       }
+       
+       
+       
+       
+       
+
+    }
+    
+    
+    */
+    
+    
+    
+    
+    //document.getElementById('hamlet').style.backgroundColor = "yellow";
+    //document.querySelector('span.hamlet').style.background Color = "yellow";
 </script>
 
     <script src="js-main.js"></script> 
